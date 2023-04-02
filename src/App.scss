@@ -13,6 +13,8 @@ $lanzones: #e7e393;
   color: $dark-brown;
   border-radius: 0.5em;
   background-color: $mango;
+  cursor: pointer;
+  user-select: none;
 }
 
 html {
@@ -60,6 +62,10 @@ html {
 }
 
 .side-buttons {
+  &:hover {
+    background-color: darken($orange, 8);
+  }
+
   @include buttons();
   background-color: $orange;
   width: 3em;
@@ -67,6 +73,10 @@ html {
 }
 
 .buttons {
+  &:hover {
+    background-color: darken($mango, 10);
+  }
+
   @include buttons();
   width: 5em;
   height: 5em;
