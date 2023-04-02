@@ -10,9 +10,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   - Components
 
+    - Default exports
+
+    - Importing components
+
   - SCSS
 
+    - Mixins
+
+    - Variables
+
   - JSX
+
+    - The render() method
 
 ## Available Scripts
 
