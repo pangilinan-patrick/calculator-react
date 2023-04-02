@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Cool Little Calculator App
+
+- I started this little project to dip my toes into ReactJS
+
+- So far, I've gotten hands-on experience on:
+
+  - Components
+
+  - SCSS
+
+  - JSX
+
 ## Available Scripts
 
 In the project directory, you can run:
