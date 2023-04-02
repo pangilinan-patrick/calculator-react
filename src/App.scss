@@ -4,6 +4,17 @@ $orange: #dd7230;
 $mango: #f4c95d;
 $lanzones: #e7e393;
 
+@mixin buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: helvetica;
+  font-weight: bold;
+  color: $dark-brown;
+  border-radius: 0.5em;
+  background-color: $mango;
+}
+
 html {
   background-color: $lanzones;
   width: 100%;
@@ -19,7 +30,7 @@ html {
   padding: 1em;
   background-color: $tan;
   border-radius: 0.5em;
-  width: 25em;
+  width: 20em;
   height: 32em;
 }
 
@@ -36,19 +47,27 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 67%;
+  width: 81%;
   height: 68%;
 }
 
-.buttons {
+.side-buttons-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font: helvetica;
-  font-weight: bold;
-  color: $dark-brown;
-  border-radius: 0.5em;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 67%;
+  margin-left: 0.29em;
+}
+
+.side-buttons {
+  @include buttons();
+  background-color: $orange;
+  width: 3em;
+  height: 5em;
+}
+
+.buttons {
+  @include buttons();
   width: 5em;
   height: 5em;
-  background-color: $mango;
 }
