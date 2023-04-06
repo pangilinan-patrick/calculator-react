@@ -4,18 +4,33 @@ import Panel from "./Panel";
 class Buttons extends Component {
   constructor(props) {
     super(props);
-    this.state = { panelText: "" };
+    this.state = { panelText: "", panelAns: "" };
   }
 
   inputNum = (event) => {
     const text = event.target.textContent;
     this.setState((prevState) => ({ panelText: prevState.panelText + text }));
+
+    try {
+      const ans = this.state.panelText + text;
+      this.setState({ panelAns: eval(ans) });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  equalNums = (event) => {
+    const ans = this.state.panelAns;
+    this.setState({ panelText: ans, panelAns: "" });
   };
 
   render() {
     return (
       <>
-        <Panel panelText={this.state.panelText} />
+        <Panel
+          panelText={this.state.panelText}
+          panelAns={this.state.panelAns}
+        />
         <div className="buttons-container">
           <div onClick={this.inputNum} className="buttons">
             7
@@ -50,7 +65,9 @@ class Buttons extends Component {
           <div onClick={this.inputNum} className="buttons">
             .
           </div>
-          <div className="buttons">=</div>
+          <div onClick={this.equalNums} className="buttons">
+            =
+          </div>
         </div>
 
         <div className="side-buttons-container">

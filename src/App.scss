@@ -44,13 +44,25 @@ html {
   height: 9em;
   width: 100%;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-end;
+  align-items: flex-end;
 }
 
 .panelNums {
   color: $dark-brown;
   font-weight: bold;
   font-size: 3em;
+  padding-top: 0.1em;
+  padding-right: 0.2em;
+  user-select: none;
+}
+
+.panelAns {
+  color: darken($tan, 10);
+  font-weight: bold;
+  font-size: 2em;
   padding-top: 0.1em;
   padding-right: 0.2em;
 }
