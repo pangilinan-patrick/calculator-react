@@ -43,6 +43,16 @@ html {
   border-radius: 0.5em;
   height: 9em;
   width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.panelNums {
+  color: $dark-brown;
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 0.1em;
+  padding-right: 0.2em;
 }
 
 .buttons-container {
