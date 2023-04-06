@@ -24,6 +24,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     - The render() method
 
+  - React States
+
+    - setState
+
+    - prevState
+
+    - events
+
 ## Available Scripts
 
 In the project directory, you can run:
