@@ -57,6 +57,14 @@ html {
   padding-top: 0.1em;
   padding-right: 0.2em;
   user-select: none;
+  text-align: right;
+  width: 6.3em;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .panelAns {
@@ -65,6 +73,15 @@ html {
   font-size: 2em;
   padding-top: 0.1em;
   padding-right: 0.2em;
+  user-select: none;
+  width: 9.5em;
+  text-align: right;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .buttons-container {
