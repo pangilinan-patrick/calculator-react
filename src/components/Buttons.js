@@ -4,7 +4,7 @@ import Panel from "./Panel";
 class Buttons extends Component {
   constructor(props) {
     super(props);
-    this.state = { panelText: "", panelAns: "" };
+    this.state = { panelText: "", panelAns: " " };
   }
 
   inputNum = (event) => {
