@@ -8,7 +8,6 @@ $lanzones: #e7e393;
   display: flex;
   justify-content: center;
   align-items: center;
-  font: helvetica;
   font-weight: bold;
   color: $dark-brown;
   border-radius: 0.5em;
@@ -33,7 +32,7 @@ html {
   background-color: $tan;
   border-radius: 0.5em;
   width: 20em;
-  height: 32em;
+  height: 36em;
 }
 
 .panel {
@@ -89,15 +88,15 @@ html {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 81%;
-  height: 68%;
+  height: 63%;
 }
 
 .side-buttons-container {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  height: 67%;
-  margin-left: 0.29em;
+  height: 61.5%;
+  margin-left: 0.3em;
 }
 
 .side-buttons {
@@ -119,4 +118,24 @@ html {
   @include buttons();
   width: 5em;
   height: 5em;
+}
+
+.top-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 81%;
+  height: 10%;
+  margin-bottom: 0.05em;
+}
+
+.top-buttons {
+  &:hover {
+    background-color: darken($orange, 8);
+  }
+
+  @include buttons();
+  background-color: $orange;
+  width: 5em;
+  height: 3em;
 }

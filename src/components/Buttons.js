@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Panel from "./Panel";
+import { FaBackspace } from "react-icons/fa";
 
 class Buttons extends Component {
   constructor(props) {
@@ -19,7 +20,24 @@ class Buttons extends Component {
     }
   };
 
-  equalNums = (event) => {
+  clearInput = () => {
+    this.setState({ panelText: "", panelAns: "" });
+  };
+
+  backInput = () => {
+    this.setState({
+      panelText: this.state.panelText.slice(0, -1),
+    });
+    try {
+      this.setState({
+        panelAns: eval(this.state.panelText.slice(0, -1)),
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  equalNums = () => {
     const ans = this.state.panelAns;
     this.setState({ panelText: ans, panelAns: "" });
   };
@@ -31,6 +49,17 @@ class Buttons extends Component {
           panelText={this.state.panelText}
           panelAns={this.state.panelAns}
         />
+        <div className="top-buttons-container">
+          <div onClick={this.inputNum} className="top-buttons">
+            ()
+          </div>
+          <div onClick={this.clearInput} className="top-buttons">
+            C
+          </div>
+          <div onClick={this.backInput} className="top-buttons">
+            <FaBackspace />
+          </div>
+        </div>
         <div className="buttons-container">
           <div onClick={this.inputNum} className="buttons">
             7
@@ -69,7 +98,6 @@ class Buttons extends Component {
             =
           </div>
         </div>
-
         <div className="side-buttons-container">
           <div onClick={this.inputNum} className="side-buttons">
             +
