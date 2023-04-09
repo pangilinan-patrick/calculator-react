@@ -9,11 +9,12 @@ class Buttons extends Component {
   }
 
   inputNum = (event) => {
-    const text = event.target.textContent;
+    let text = event.target.textContent;
     this.setState((prevState) => ({ panelText: prevState.panelText + text }));
 
     try {
-      const ans = this.state.panelText + text;
+      let ans = this.state.panelText + text;
+      ans = ans.replace(/x/g, "*");
       this.setState({ panelAns: eval(ans) });
     } catch (err) {
       console.log(err);
