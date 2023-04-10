@@ -8,6 +8,55 @@ class Buttons extends Component {
     this.state = { panelText: "", panelAns: " " };
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", this.keybDown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.keybDown);
+  }
+
+  keybDown = (event) => {
+    const key = event.key;
+    if (
+      key === "7" ||
+      key === "8" ||
+      key === "9" ||
+      key === "4" ||
+      key === "5" ||
+      key === "6" ||
+      key === "1" ||
+      key === "2" ||
+      key === "3" ||
+      key === "0" ||
+      key === "."
+    ) {
+      this.keybInputNum(key);
+    } else if (key === "/" || key === "+" || key === "-") {
+      this.keybInputNum(key);
+    } else if (key === "x" || key === "*") {
+      this.keybInputNum("*");
+    } else if (key === "r" || key === "c") {
+      this.clearInput();
+    } else if (key === "=" || key === "Enter") {
+      this.equalNums();
+    } else if (key === "Backspace") {
+      this.backInput();
+    }
+  };
+
+  keybInputNum = (text) => {
+    this.setState((prevState) => ({ panelText: prevState.panelText + text }));
+
+    try {
+      let ans = this.state.panelText + text;
+      ans = ans.replace(/x/g, "*");
+      this.setState({ panelAns: eval(ans) });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   inputNum = (event) => {
     let text = event.target.textContent;
     this.setState((prevState) => ({ panelText: prevState.panelText + text }));
@@ -51,9 +100,7 @@ class Buttons extends Component {
           panelAns={this.state.panelAns}
         />
         <div className="top-buttons-container">
-          <div onClick={this.inputNum} className="top-buttons">
-            ()
-          </div>
+          <div className="top-buttons">()</div>
           <div onClick={this.clearInput} className="top-buttons">
             C
           </div>
