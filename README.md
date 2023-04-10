@@ -32,6 +32,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
     - events
 
+  - Others
+
+    - Key Down events
+
+## To-Do:
+
+- Additional validation
+
+  - Can't have more than one operator symbol after another (++ -- \*\* // ..)
+
+  - Handle parenthesis input
+
+- Add alerts to show keypress are handled and show keybinds for clearing the input
+
+- Potentially add a dropdown for more calculator functions such as square root, exponent, modulus, etc.
+
 ## Available Scripts
 
 In the project directory, you can run:
