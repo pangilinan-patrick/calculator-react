@@ -5,7 +5,7 @@ import { FaBackspace } from "react-icons/fa";
 class Buttons extends Component {
   constructor(props) {
     super(props);
-    this.state = { panelText: "", panelAns: " " };
+    this.state = { panelText: "", panelAns: " ", parentheses: 0 };
   }
 
   componentDidMount() {
@@ -70,11 +70,40 @@ class Buttons extends Component {
     }
   };
 
+  inputParenthesis = () => {
+    if (
+      this.state.panelText.slice(-1) === "(" ||
+      this.state.panelText.slice(-1) === ""
+    ) {
+      this.setState((prevState) => ({
+        panelText: prevState.panelText + "(",
+        parentheses: this.state.parentheses + 1,
+      }));
+    } else if (this.state.parentheses > 0) {
+      this.setState((prevState) => ({
+        panelText: prevState.panelText + ")",
+        parentheses: this.state.parentheses - 1,
+      }));
+      console.log(this.state.parentheses);
+    } else {
+      this.setState((prevState) => ({
+        panelText: prevState.panelText + "(",
+        parentheses: this.state.parentheses + 1,
+      }));
+    }
+  };
+
   clearInput = () => {
-    this.setState({ panelText: "", panelAns: "" });
+    this.setState({ panelText: "", panelAns: "", parentheses: 0 });
   };
 
   backInput = () => {
+    if (this.state.panelText.slice(-1) === "(") {
+      this.setState(() => ({
+        parentheses: this.state.parentheses - 1,
+      }));
+      console.log(this.state.parentheses);
+    }
     this.setState({
       panelText: this.state.panelText.slice(0, -1),
     });
@@ -89,7 +118,7 @@ class Buttons extends Component {
 
   equalNums = () => {
     const ans = this.state.panelAns;
-    this.setState({ panelText: ans, panelAns: "" });
+    this.setState({ panelText: ans, panelAns: "", parentheses: 0 });
   };
 
   render() {
@@ -100,7 +129,9 @@ class Buttons extends Component {
           panelAns={this.state.panelAns}
         />
         <div className="top-buttons-container">
-          <div className="top-buttons">()</div>
+          <div onClick={this.inputParenthesis} className="top-buttons">
+            ()
+          </div>
           <div onClick={this.clearInput} className="top-buttons">
             C
           </div>
