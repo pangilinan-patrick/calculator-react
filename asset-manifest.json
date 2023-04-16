@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pangilinan-patrick/calculator-react/static/css/main.042a8815.css",
+    "main.js": "/pangilinan-patrick/calculator-react/static/js/main.ec161a32.js",
+    "static/js/787.a174f9e5.chunk.js": "/pangilinan-patrick/calculator-react/static/js/787.a174f9e5.chunk.js",
+    "index.html": "/pangilinan-patrick/calculator-react/index.html",
+    "main.042a8815.css.map": "/pangilinan-patrick/calculator-react/static/css/main.042a8815.css.map",
+    "main.ec161a32.js.map": "/pangilinan-patrick/calculator-react/static/js/main.ec161a32.js.map",
+    "787.a174f9e5.chunk.js.map": "/pangilinan-patrick/calculator-react/static/js/787.a174f9e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.042a8815.css",
+    "static/js/main.ec161a32.js"
+  ]
+}
