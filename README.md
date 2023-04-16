@@ -42,11 +42,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   - Can't have more than one operator symbol after another (++ -- \*\* // ..)
 
-  - Handle parenthesis input
+  - Handle parenthesis input ✅
 
 - Add alerts to show keypress are handled and show keybinds for clearing the input
 
 - Potentially add a dropdown for more calculator functions such as square root, exponent, modulus, etc.
+
+## Credits:
+
+- Favicon by [wtvrsmd](https://www.favicon.cc/?action=icon&file_id=704913)
 
 ## Available Scripts
 
