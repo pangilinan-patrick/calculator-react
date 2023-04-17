@@ -102,7 +102,12 @@ class Buttons extends Component {
       this.setState(() => ({
         parentheses: this.state.parentheses - 1,
       }));
-      console.log(this.state.parentheses);
+      // console.log(this.state.parentheses);
+    } else if (this.state.panelText.slice(-1) === ")") {
+      this.setState(() => ({
+        parentheses: this.state.parentheses + 1,
+      }));
+      // console.log(this.state.parentheses);
     }
     this.setState({
       panelText: this.state.panelText.slice(0, -1),
