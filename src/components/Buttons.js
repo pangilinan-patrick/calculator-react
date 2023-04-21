@@ -18,19 +18,7 @@ class Buttons extends Component {
 
   keybDown = (event) => {
     const key = event.key;
-    if (
-      key === "7" ||
-      key === "8" ||
-      key === "9" ||
-      key === "4" ||
-      key === "5" ||
-      key === "6" ||
-      key === "1" ||
-      key === "2" ||
-      key === "3" ||
-      key === "0" ||
-      key === "."
-    ) {
+    if ((key >= "0" && key <= "9") || key === ".") {
       this.keybInputNum(key);
     } else if (key === "/" || key === "+" || key === "-") {
       this.keybInputNum(key);
