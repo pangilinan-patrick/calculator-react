@@ -40,7 +40,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Additional validation
 
-  - Can't have more than one operator symbol after another (++ -- \*\* // ..)
+  - Can't have more than one operator symbol after another (++ -- \*\* // ..) ✅
 
   - Handle parenthesis input ✅
 

@@ -23,7 +23,7 @@ class Buttons extends Component {
     } else if (key === "/" || key === "+" || key === "-") {
       this.keybInputNum(key);
     } else if (key === "x" || key === "*") {
-      this.keybInputNum("*");
+      this.keybInputNum("x");
     } else if (key === "r" || key === "c") {
       this.clearInput();
     } else if (key === "=" || key === "Enter") {
@@ -34,7 +34,11 @@ class Buttons extends Component {
   };
 
   keybInputNum = (text) => {
-    this.setState((prevState) => ({ panelText: prevState.panelText + text }));
+    const pattern = /(\+\+|--|\.\.|\*\*|\/\/|xx)/g;
+    this.setState((prevState) => {
+      if (!pattern.test(prevState.panelText + text))
+        return { panelText: prevState.panelText + text };
+    });
 
     try {
       let ans = this.state.panelText + text;
@@ -47,7 +51,11 @@ class Buttons extends Component {
 
   inputNum = (event) => {
     let text = event.target.textContent;
-    this.setState((prevState) => ({ panelText: prevState.panelText + text }));
+    const pattern = /(\+\+|--|\.\.|\*\*|\/\/|xx)/g;
+    this.setState((prevState) => {
+      if (!pattern.test(prevState.panelText + text))
+        return { panelText: prevState.panelText + text };
+    });
 
     try {
       let ans = this.state.panelText + text;
